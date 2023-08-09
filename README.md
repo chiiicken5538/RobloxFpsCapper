@@ -1,4 +1,5 @@
 
+[ ![jitpack][] ](https://jitpack.io/#discord-jda/JDA)
 [ ![Download][] ](https://github.com/chiiicken5538/RobloxFpsCapper/releases/download/RELEASE/Roblox.FPS.Capper.bat)
 
 # RobloxFpsCapper
