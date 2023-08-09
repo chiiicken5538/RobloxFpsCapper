@@ -1,5 +1,5 @@
 # RobloxFpsCapper
-A simple interactive script that overrides your Roblox Client Settings to change your FPS Cap to the amount you want 
+This script is an interactive tool to modify the Frames Per Second cap in the Roblox client settings. Users run this script to change the FPS cap to a desired value. The script manually overrides specific parameters in the Roblox Client Settings. It's emphasized that using this script won't result in bans as it doesn't alter the Roblox client directly; it merely modifies a settings file within the Roblox directory. If the Roblox client updates, users might need to run the script again to reapply their desired FPS cap.
 
 ## Download
 Click [here to download the newest script version](https://github.com/chiiicken5538/RobloxFpsCapper/releases/download/RELEASE/Roblox.FPS.Capper.bat) 
