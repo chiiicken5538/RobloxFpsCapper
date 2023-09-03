@@ -52,13 +52,52 @@ If Defined value (
         echo [Success] Please restart your game to see the changes.
         pause
     ) else (
-        echo.
-        echo.
-        echo.
+
+        echo. && echo. && echo.
         echo [FAILED] Failed to find your Roblox Version Folder!
-        echo [FAILED] Please update your Roblox to the newest version.
-        echo.
-        pause
+        echo [FAILED] I will manually fetch your Roblox path now... 
+
+        timeout 2 >NUL
+            
+        echo. && echo /// Attempting second fetching Method \\
+
+        for /f "delims=" %%D in ('dir "%localappdata%/Roblox/Versions" /B') do (
+
+            echo.
+            echo.
+            echo %%D
+            echo [Backup Method] Caught new Roblox path: %%D && echo [Backup Method] Attempting settings override...
+
+            cd "%localappdata%/Roblox/Versions/%%D/"
+            
+            if exist "ClientSettings/" (
+                echo.
+            ) else (
+                mkdir "ClientSettings"
+            )
+
+            cd "ClientSettings" 
+            echo { "DFIntTaskSchedulerTargetFps": %fpscap% } > "ClientAppSettings.json"
+            echo [Backup Method] [Success] Settingsfile in %%D has been overriden. New value: %fpscap%! 
+        )
+
+            echo.
+            echo.
+            echo [Backup Method] [FINISH] Your Roblox FPS Cap has been set to %fpscap%.
+            echo [Backup Method] [FINISH] If you still see no changes in your Game, please make sure to update your Game Client.
+
+
+
+            timeout 1 >nul
+
+            cls  
+
+            echo [Backup Method] [FINISH] Your Roblox FPS Cap has been set to %fpscap%.
+            echo [Backup Method] [FINISH] If you still see no changes in your Game, please make sure to update your Game Client.
+            echo.
+            echo [Backup Method] [FINISH] Press any key to exit. 
+
+            pause >nul
     )
 
 ) else (
